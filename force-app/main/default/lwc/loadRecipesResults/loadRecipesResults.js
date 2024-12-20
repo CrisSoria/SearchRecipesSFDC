@@ -16,9 +16,11 @@ export default class LoadRecipesResults extends LightningElement {
     //obtenemos los datos de la receta seleccionada
     this.selectedRecipe = this.recipesResults.find(currRec => currRec.idMeal === selectedRecipeId);
     this.showModal = true;
+
   }
 
   closeModalHandler(){
     this.showModal = false;
   }
+
 }

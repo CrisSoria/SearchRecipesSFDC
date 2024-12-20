@@ -1,0 +1,20 @@
+<template>
+  <!-- checkeamos si es que hay recetas para mostrar -->
+  <template lwc:if={checkRecipesResults}>
+    <!-- checkeamos si es modal debe mostrarse -->
+    <template lwc:if={showModal}>
+      <c-recipe-modal selected-recipe={selectedRecipe} onclosemodal={closeModalHandler}></c-recipe-modal>
+    </template>
+
+    <lightning-card>
+      <div class="slds-grid slds-wrap">
+        <template for:each={recipesResults} for:item="recipe">
+          <div key={recipe.idMeal} class="slds-col slds-size_1-of-1 slds-medim-size_6-of-12 slds-large-size_4-of-12">
+            <c-recipe-card recipe={recipe} onrecipe={recipeHandler}></c-recipe-card>
+          </div>
+        </template>
+      </div>
+    </lightning-card>
+
+  </template>
+</template>

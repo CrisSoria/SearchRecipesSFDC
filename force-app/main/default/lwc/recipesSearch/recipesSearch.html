@@ -1,0 +1,30 @@
+<template>
+  <div class="hero-secction">
+    <div class="hero-content">
+      <h1 class="hero-heading">Aplicación de Recetas</h1>
+      <!-- barra de busqueda -->
+      <div class="slds-grid slds-wrap slds-grid_align-center">
+        <div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12">
+          <lightning-input 
+          name="enter-search" 
+          label="Buscar una Receta" 
+          variant="label-hidden"
+          placeholder="Escribe una receta para buscar" 
+          type="search" 
+          onchange={changeHandler}
+          ></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+          <lightning-button 
+          variant="destructive" 
+          label="Buscar receta" 
+          title="Primary action" 
+          onclick={clickHandler}
+          class="slds-m-left_x-small"
+          ></lightning-button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</template>

@@ -1,4 +1,6 @@
+### [Live Site](https://labsxd-23e-dev-ed.develop.my.site.com/SearchRecipes/)
 # Integración de Salesforce LWC con The Meal DB
+<img src="https://i.ibb.co/GF4B4sP/Recipe-Search.png" align="right" alt="img" width="50%" height="auto" border="0">
 
 Este proyecto demuestra una aplicación de Salesforce Lightning Web Components (LWC) integrada con la API de The Meal DB para buscar y mostrar recetas de comida. La aplicación aprovecha capacidades clave de Salesforce y las mejores prácticas de desarrollo frontend.
 

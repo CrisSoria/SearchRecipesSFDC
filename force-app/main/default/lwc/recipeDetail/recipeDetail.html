@@ -1,79 +1,80 @@
-<!-- recipeDetail.html -->
 <template>
-  <div class="recipe-container" if:true={recipe}>
-      <div class="recipe-header">
-          <img src={recipe.strMealThumb} alt={recipe.strMeal}>
-          <div class="recipe-title">
-              <h1>{recipe.strMeal}</h1>
-          </div>
-      </div>
-      
-      <div class="recipe-meta">
-          <span class="meta-item">
-              <lightning-icon icon-name="utility:food_and_drink" size="small"></lightning-icon>
-              {recipe.strCategory}
-          </span>
-          <span class="meta-item">
-              <lightning-icon icon-name="utility:world" size="small"></lightning-icon>
-              {recipe.strArea}
-          </span>
-          <template if:true={tags.length}>
-              <span class="meta-item tags">
-                  <lightning-icon icon-name="utility:tag" size="small"></lightning-icon>
-                  <template for:each={tags} for:item="tag">
-                      <span key={tag} class="tag">{tag}</span>
-                  </template>
-              </span>
-          </template>
-      </div>
+    <div class="recipe-container" if:true={recipe}>
+        <div class="recipe-header">
+            <img src={recipe.strMealThumb} alt={recipe.strMeal}>
+            <div class="recipe-title">
+                <div class="category-badge">
+                    <lightning-icon icon-name="utility:food_and_drink" size="x-small"></lightning-icon>
+                    {recipe.strCategory}
+                </div>
+                <h1>{recipe.strMeal}</h1>
+                <div class="recipe-origin">
+                    <lightning-icon icon-name="utility:world" size="x-small"></lightning-icon>
+                    {recipe.strArea}
+                </div>
+            </div>
+        </div>
+        
+        <div class="recipe-meta">
+            <template if:true={tags.length}>
+                <div class="tags-container">
+                    <lightning-icon icon-name="utility:tag" size="small"></lightning-icon>
+                    <div class="tags">
+                        <template for:each={tags} for:item="tag">
+                            <span key={tag} class="tag">{tag}</span>
+                        </template>
+                    </div>
+                </div>
+            </template>
+        </div>
 
-      <div class="recipe-content">
-          <div class="ingredients-section">
-              <h2>
-                  <lightning-icon icon-name="utility:checklist" size="small"></lightning-icon>
-                  Ingredientes
-              </h2>
-              <div class="ingredients-grid">
-                  <template for:each={ingredients} for:item="ingredient">
-                      <div key={ingredient.id} class="ingredient-item">
-                          <span class="measure">{ingredient.measure}</span>
-                          <span class="name">{ingredient.name}</span>
-                      </div>
-                  </template>
-              </div>
-          </div>
+        <div class="recipe-content">
+            <div class="ingredients-section">
+                <h2>
+                    <lightning-icon icon-name="utility:checklist" size="small"></lightning-icon>
+                    Ingredientes
+                </h2>
+                <div class="ingredients-grid">
+                    <template for:each={ingredients} for:item="ingredient">
+                        <div key={ingredient.id} class="ingredient-item">
+                            <div class="ingredient-measure">{ingredient.measure}</div>
+                            <div class="ingredient-name">{ingredient.name}</div>
+                        </div>
+                    </template>
+                </div>
+            </div>
 
-          <div class="instructions-section">
-              <h2>
-                  <lightning-icon icon-name="utility:steps" size="small"></lightning-icon>
-                  Instrucciones
-              </h2>
-              <div class="instructions-list">
-                  <template for:each={formattedInstructions} for:item="instruction">
-                      <div key={instruction.id} class="instruction-step">
-                          <span class="step-number">{instruction.number}</span>
-                          <p>{instruction.text}</p>
-                      </div>
-                  </template>
-              </div>
-          </div>
+            <div class="instructions-section">
+                <h2>
+                    <lightning-icon icon-name="utility:steps" size="small"></lightning-icon>
+                    Paso a Paso
+                </h2>
+                <div class="instructions-list">
+                    <template for:each={formattedInstructions} for:item="instruction">
+                        <div key={instruction.id} class="instruction-step">
+                            <div class="step-number">{instruction.number}</div>
+                            <div class="step-content">{instruction.text}</div>
+                        </div>
+                    </template>
+                </div>
+            </div>
 
-          <template if:true={hasYoutubeLink}>
-              <div class="video-section">
-                  <h2>
-                      <lightning-icon icon-name="utility:video" size="small"></lightning-icon>
-                      Video Tutorial
-                  </h2>
-                  <div class="video-container">
-                      <iframe 
-                          src={youtubeEmbedUrl} 
-                          frameborder="0" 
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                          allowfullscreen>
-                      </iframe>
-                  </div>
-              </div>
-          </template>
-      </div>
-  </div>
+            <template if:true={hasYoutubeLink}>
+                <div class="video-section">
+                    <h2>
+                        <lightning-icon icon-name="utility:video" size="small"></lightning-icon>
+                        Video Tutorial
+                    </h2>
+                    <div class="video-container">
+                        <iframe 
+                            src={youtubeEmbedUrl} 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
 </template>

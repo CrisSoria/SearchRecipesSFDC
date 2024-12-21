@@ -1,50 +1,107 @@
 .card {
-  max-width: 350px;
+  max-width: 320px;
   margin: 20px auto;
-  border-radius: 10px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 20px rgb(0, 0, 0, 0.2);
-  transition: transform 0.2s ease-in-out;
-  font-family: 'Helveti Neue', Helvetica, Arial, sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background-color: #fff;
+  border: 1px solid #E8ECF1;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
 }
 
 .recipe-img {
   width: 100%;
-  height: 220px;
+  height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .recipe-img {
+  transform: scale(1.05);
+}
+
+.category-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: rgba(42, 91, 99, 0.9);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
 }
 
 .card-content {
-  padding: 15px;
-  background-color: #fff;
-  text-align: left;
+  padding: 1.25rem;
+}
+
+.content-header {
+  margin-bottom: 1rem;
 }
 
 .header {
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2A5B63;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.detail {
-  color: #ff6f61;
-  font-size: 20px;
-  margin-bottom: 10px;
+.origin {
+  display: flex;
+  align-items: center;
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
 }
 
+.origin-icon {
+  --slds-c-icon-color-foreground: #2A5B63;
+  margin-right: 0.5rem;
+}
+
+.card-footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #E8ECF1;
+}
+
+/* Lightning Button Custom Styles */
 .recipe-button {
   width: 100%;
-  padding: 12px;
-  background-color: #ff6f61;
-  color: #fff;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
 }
-.recipe-button:hover {
-  background-color: #e65a50;
+
+.recipe-button lightning-button {
+  --slds-c-button-brand-color-background: #2A5B63;
+  --slds-c-button-brand-color-background-hover: #1E4147;
+  --slds-c-button-brand-color-border: #2A5B63;
+  --slds-c-button-brand-color-border-hover: #1E4147;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card {
+      max-width: 100%;
+  }
+  
+  .image-container {
+      height: 180px;
+  }
 }

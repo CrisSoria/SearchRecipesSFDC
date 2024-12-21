@@ -1,29 +1,104 @@
-.hero-secction{
-  background-image: url('/resource/mealDB_background');
+.hero-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/resource/mealDB_background');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 400px;
+  min-height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  color: #fff;
+  padding: 2rem;
 }
 
-.hero-content{
-  background: rgb(0, 0, 0,0.5);
-  padding: 20px;
-  border-radius: 8px;
+.hero-content {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem;
+  border-radius: 16px;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   text-align: center;
-  color: #000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.hero-heading{
-  font-size: 36px;
+.hero-heading {
+  font-size: 2.5rem;
   font-weight: bold;
-  margin-bottom: 20px;
-  color: #fff;
+  margin-bottom: 0.5rem;
+  color: #2A5B63;
+}
+
+.hero-subheading {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.search-container {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Customizing Lightning Input */
+.custom-input ::part(input) {
+  border: 2px solid #E8ECF1;
+  border-radius: 8px;
+  height: 45px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.custom-input ::part(input):focus {
+  border-color: #2A5B63;
+  box-shadow: 0 0 0 1px #2A5B63;
+}
+
+/* Customizing Lightning Button */
+.custom-button {
+  --slds-c-button-brand-color-background: #2A5B63;
+  --slds-c-button-brand-color-background-hover: #1E4147;
+  --slds-c-button-brand-color-border: #2A5B63;
+  --slds-c-button-brand-color-border-hover: #1E4147;
+  height: 45px;
+}
+
+.features-container {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #E8ECF1;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.feature-icon {
+  --slds-c-icon-color-foreground: #2A5B63;
+  --slds-c-icon-color-background: #E8ECF1;
+  margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+  color: #666;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .hero-heading {
+      font-size: 2rem;
+  }
+  
+  .hero-content {
+      padding: 1.5rem;
+  }
+  
+  .feature-item {
+      /* margin-bottom: 1rem; */
+      display: none;
+  }
 }

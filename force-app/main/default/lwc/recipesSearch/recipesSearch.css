@@ -1,5 +1,5 @@
 .hero-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/resource/mealDB_background');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.ibb.co/H7cvtcH/meal-DB-background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -65,7 +65,7 @@
 
 .features-container {
   margin-top: 2rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
   border-top: 1px solid #E8ECF1;
 }
 
@@ -79,7 +79,38 @@
 .feature-icon {
   --slds-c-icon-color-foreground: #2A5B63;
   --slds-c-icon-color-background: #E8ECF1;
+}
+
+.feature-item p {
+  color: #666;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.custom-icon-wrapper {
+  background-color: #2A5B63;
+  border-radius: 8px;
+  padding: 0.5rem; 
   margin-bottom: 0.5rem;
+}
+
+/* Estilos específicos para la comunidad */
+:host {
+  --sds-c-icon-color-background: transparent !important;
+  --sds-c-icon-color-foreground-default: #ffffff !important;
+}
+
+/* Override para iconos standard en comunidad */
+.custom-icon-wrapper lightning-icon {
+  --sds-c-icon-color-background: transparent !important;
+  --slds-c-icon-color-background: transparent !important;
+  --sds-c-icon-color-foreground-default: #ffffff !important;
+  --slds-c-icon-color-foreground: #ffffff !important;
+}
+
+/* Asegurando que los iconos standard mantengan el color correcto */
+.custom-icon-wrapper .slds-icon-standard {
+  background-color: #2A5B63 !important;
 }
 
 .feature-item p {
@@ -98,7 +129,6 @@
   }
   
   .feature-item {
-      /* margin-bottom: 1rem; */
       display: none;
   }
 }

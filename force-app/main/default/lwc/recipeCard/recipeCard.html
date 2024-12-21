@@ -1,32 +1,33 @@
 <template>
-  <div class="card">
-      <div class="image-container">
-          <img class="recipe-img" src={recipe.strMealThumb} alt={recipe.strMeal} />
-          <div class="category-badge">
-              {recipe.strCategory}
-          </div>
-      </div>
-      <div class="card-content">
-          <div class="content-header">
-              <h3 class="header">{recipe.strMeal}</h3>
-              <p class="origin">
-                  <lightning-icon 
-                      icon-name="utility:world" 
-                      size="x-small" 
-                      class="origin-icon"
-                  ></lightning-icon>
-                  {recipe.strArea}
-              </p>
-          </div>
-          <div class="card-footer">
-              <lightning-button 
-                  variant="brand"
-                  label="Ver Receta" 
-                  title="Ver Receta"
-                  onclick={recipeHandler}
-                  class="recipe-button"
-              ></lightning-button>
-          </div>
-      </div>
-  </div>
-</template>
+    <div class="card">
+        <div class="image-container">
+            <img class="recipe-img" src={recipe.strMealThumb} alt={recipe.strMeal} />
+            <div class="category-badge">
+                {recipe.strCategory}
+            </div>
+        </div>
+        <div class="card-content">
+            <div class="content-header">
+                <h3 class="header">{recipe.strMeal}</h3>
+                <p class="origin">
+                    <lightning-icon 
+                        icon-name="utility:world" 
+                        size="x-small" 
+                        class="origin-icon"
+                    ></lightning-icon>
+                    {recipe.strArea}
+                </p>
+            </div>
+            <div class="card-footer">
+                <lightning-button 
+                    variant="brand"
+                    label="Ver Receta" 
+                    title="Ver Receta"
+                    onclick={recipeHandler}
+                    class="recipe-button"
+                    style="--slds-c-button-brand-color-background: #2A5B63; --slds-c-button-brand-color-border: #2A5B63;--slds-c-button-brand-color-background-hover: #1E4147; --slds-c-button-brand-color-border-hover: #1E4147"
+                ></lightning-button>
+            </div>
+        </div>
+    </div>
+  </template>

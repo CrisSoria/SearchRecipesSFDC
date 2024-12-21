@@ -1,10 +1,32 @@
 <template>
-    <div class="card">
-      <img class="recipe-img" src={recipe.strMealThumb} alt={recipe.strMeal} />
-      <div class="card-content">
-        <h3 class="header">{recipe.strMeal}</h3>
-        <p class="detail">{recipe.strArea} - {recipe.strCategory}</p>
+  <div class="card">
+      <div class="image-container">
+          <img class="recipe-img" src={recipe.strMealThumb} alt={recipe.strMeal} />
+          <div class="category-badge">
+              {recipe.strCategory}
+          </div>
       </div>
-      <button class="recipe-button" onclick={recipeHandler}>Receta</button>
-    </div>
+      <div class="card-content">
+          <div class="content-header">
+              <h3 class="header">{recipe.strMeal}</h3>
+              <p class="origin">
+                  <lightning-icon 
+                      icon-name="utility:world" 
+                      size="x-small" 
+                      class="origin-icon"
+                  ></lightning-icon>
+                  {recipe.strArea}
+              </p>
+          </div>
+          <div class="card-footer">
+              <lightning-button 
+                  variant="brand"
+                  label="Ver Receta" 
+                  title="Ver Receta"
+                  onclick={recipeHandler}
+                  class="recipe-button"
+              ></lightning-button>
+          </div>
+      </div>
+  </div>
 </template>

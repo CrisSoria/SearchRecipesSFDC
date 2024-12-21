@@ -1,20 +1,44 @@
+<!-- loadRecipesResults.html -->
 <template>
-  <!-- checkeamos si es que hay recetas para mostrar -->
-  <template lwc:if={checkRecipesResults}>
-    <!-- checkeamos si es modal debe mostrarse -->
-    <template lwc:if={showModal}>
-      <c-recipe-modal selected-recipe={selectedRecipe} onclosemodal={closeModalHandler}></c-recipe-modal>
-    </template>
-
-    <lightning-card>
-      <div class="slds-grid slds-wrap">
-        <template for:each={recipesResults} for:item="recipe">
-          <div key={recipe.idMeal} class="slds-col slds-size_1-of-1 slds-medim-size_6-of-12 slds-large-size_4-of-12">
-            <c-recipe-card recipe={recipe} onrecipe={recipeHandler}></c-recipe-card>
+  <div class="slds-p-around_medium">
+      <!-- Show when there are no recipes -->
+      <template lwc:if={showNoResults}>
+          <div class="slds-illustration slds-illustration_small">
+              <div class="slds-text-longform">
+                  <div class="slds-text-align_center slds-m-around_medium">
+                      <lightning-icon icon-name="utility:recipe" size="large" alternative-text="No recipes" class="slds-m-bottom_medium"></lightning-icon>
+                      <h3 class="slds-text-heading_medium">No se encontraron recetas</h3>
+                      <p class="slds-text-body_regular">Intente con un término de búsqueda diferente.</p>
+                  </div>
+              </div>
           </div>
-        </template>
-      </div>
-    </lightning-card>
+      </template>
 
-  </template>
+      <!-- Show when there are recipes -->
+      <template lwc:if={hasRecipes}>
+          <!-- Modal for recipe details -->
+          <template lwc:if={showModal}>
+              <c-recipe-modal 
+                  selected-recipe={selectedRecipe} 
+                  onclosemodal={closeModalHandler}>
+              </c-recipe-modal>
+          </template>
+
+          <lightning-card>
+              <div class="slds-var-p-around_medium">
+                  <div class="slds-grid slds-gutters slds-wrap">
+                      <template for:each={recipesResults} for:item="recipe">
+                          <div key={recipe.idMeal} 
+                              class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_4-of-12 slds-var-p-around_x-small">
+                              <c-recipe-card 
+                                  recipe={recipe} 
+                                  onrecipe={recipeHandler}>
+                              </c-recipe-card>
+                          </div>
+                      </template>
+                  </div>
+              </div>
+          </lightning-card>
+      </template>
+  </div>
 </template>

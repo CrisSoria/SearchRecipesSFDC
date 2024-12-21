@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="projectName" type="String" default="Mi Proyecto" label="Nombre del Proyecto"/>
+            <property name="primaryColor" type="String" default="#11A6CD" label="Color Principal"/>
+            <property name="buttonBgColor" type="String" default="#0076D3" label="Color de Fondo del Botón"/>
+            <property name="buttonTextColor" type="String" default="#FFFFFF" label="Color de Texto del Botón"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

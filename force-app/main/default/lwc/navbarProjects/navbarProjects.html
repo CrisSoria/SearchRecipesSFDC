@@ -1,0 +1,21 @@
+<template>
+  <div class="navbar-container">
+      <div class="navbar-left">
+          <template if:true={logoUrl}>
+              <img src={logoUrl} alt="Logo" class="navbar-logo"/>
+          </template>
+          <div class="project-name">{projectName}</div>
+      </div>
+      <div class="navbar-right">
+          <a href={portfolioUrl} target="_blank" class="portfolio-link">
+              <lightning-button
+                  class="custom-button"
+                  variant="brand"
+                  label="Mi Portafolio"
+                  title="Ir al Portafolio"
+                  onclick={handlePortfolioClick}>
+              </lightning-button>
+          </a>
+      </div>
+  </div>
+</template>

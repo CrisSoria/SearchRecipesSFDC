@@ -95,11 +95,13 @@ En este proyecto se aplican las siguientes habilidades de desarrollo en Salesfor
 
 ¡Las contribuciones son bienvenidas! Por favor, envía un pull request o abre un issue para discutir cualquier cambio que desees hacer.
 
-## Contacto
+## 🤝 Contacto
+Cristian Soria - soriacristian.dev@gmail.com
 
-Cristian Soria - crissoria.netlify.app
+Portafolio: https://crissoria.netlify.app/
+
+Link del proyecto: https://labsxd-23e-dev-ed.develop.my.site.com/SearchRecipes/
 
 
 ---
-
-¡Disfruta explorando recetas con este proyecto de integración LWC!
+⭐️ Si este proyecto te gustó, no olvides darle una estrella en GitHub!
